@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+
+{% block start%}
+<form method="post" enctype="multipart/form-data">
+  {%csrf_token%}
+  <h2>Register</h2>
+
+
+
+  {% if messages %}
+  {%for message in messages%}
+  <div class="alert alert-warning" role="alert">
+    
+  {{message}}
+  </div>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+
+  <div class="mb-3">
+    <label for="firstname" class="form-label">FirstName</label>
+    <input type="text" class="form-control" id="firstname"  name="first_name">
+    
+  </div>
+  <div class="mb-3">
+    <label for="lastname" class="form-label">l]LastName</label>
+    <input type="text" class="form-control" id="lastname"  name="last_name">
+    
+  </div>
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username" name="username">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <p>Already have account?Login <a href="/login/"></a></p>
+</form>
+{%endblock%}

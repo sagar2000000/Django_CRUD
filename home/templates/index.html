@@ -1,0 +1,50 @@
+
+  {% extends "base.html"%}
+  {% block start %}
+  <h3>TOpic</h3>
+  <a href="contact.html">contact</a>
+  <a href="about.html">about</a>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex repudiandae saepe, ipsa sunt beatae provident asperiores molestiae eaque laborum iure.</p>
+<table border="1">
+  <tr>
+    <th>Sn</th>
+    <th>Name</th>
+    <th>age</th>
+    <th>Can Vote</th>
+    
+  </tr>
+  {%for detail in peoples%}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{detail.name}}</td>
+    <td>{{detail.age}}</td>
+    <td{%if detail.age >= 18 %} style="color:red"{%endif%}>
+      
+    
+       {%if detail.age >= 18%}
+        Y
+       {%else%}
+        N
+       {%endif%}
+    </td>
+
+    
+  
+  </tr>
+ {%endfor%}
+
+</table>
+<p>{{text|truncatechars:20}}</p>
+<p>{{text|linebreaks}}</p>
+<p>{{text}}</p>
+
+
+<p>
+  
+  {%if 'potato' in vegetables%}
+  cha yr potato ta
+  {%else%}
+  chaina yr potato
+  {%endif%}
+</p>
+{% endblock %}

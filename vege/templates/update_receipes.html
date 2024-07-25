@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{%block start%}
+<h2>Add Receipe</h2>
+<form action="" method="post" enctype="multipart/form-data">
+ {% csrf_token %}
+  Receipe name: <input name="Receipe_name" type="text" value="{{receipes.receipe_name}}"><br>
+  Receipe des:  <input name="Receipe_des" type="text" value="{{receipes.receipe_description}}"><br>
+  Receipe image:<input name="Receipe_img" type="file"><br>
+  <input type="submit">
+ 
+</form>
+
+
+{% endblock %}
